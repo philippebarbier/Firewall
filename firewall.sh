@@ -35,6 +35,10 @@ iptables -t filter -A INPUT -p tcp --dport 20:21 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 25 -j ACCEPT 
 iptables -t filter -A OUTPUT -p tcp --dport 25 -j ACCEPT 
 
+# Nagios
+iptables -t filter -A INPUT -p tcp --dport 5666 -j ACCEPT 
+iptables -t filter -A OUTPUT -p tcp --dport 5666 -j ACCEPT 
+
 # DNS
 iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT 
 iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT 
